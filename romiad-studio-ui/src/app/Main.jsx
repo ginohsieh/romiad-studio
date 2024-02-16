@@ -17,7 +17,8 @@ export default function Main() {
         muted
         loop
         position="absolute"
-        h="100%"
+        minH="100%"
+        minW="100%"
         zIndex="-9999"
         objectFit="cover"
       >
