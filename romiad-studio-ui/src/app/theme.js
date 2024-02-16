@@ -4,7 +4,10 @@ const theme = extendTheme({
   textStyles: {
     'website-title': {
       fontFamily: 'var(--font-torono-glitch-sans-h1)',
-      fontSize: '2.5rem',
+      fontSize: {
+        base: "2rem",
+        md: "2.5rem"
+      },
     },
   },
   fonts: {
