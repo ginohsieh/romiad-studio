@@ -1,9 +1,9 @@
 import Carousel from '@/components/Carousel';
 import CarouselItem from '@/components/Carousel/CarouselItem';
 import { Flex, Text, Heading, Stack, Box, Center } from '@chakra-ui/react';
-import config from '@/config/pages/motion.json'
+import config from '@/config/pages/story.json'
 
-export default function Motion() {
+export default function Story() {
   const { title, subtitle } = config
 
   const containerProps = {
@@ -11,7 +11,7 @@ export default function Motion() {
       base: '8rem',
       lg: '0',
     },
-    pl: {
+    pr: {
       base: '0',
       lg: '90px',
     },
@@ -28,7 +28,7 @@ export default function Motion() {
     },
     direction: {
       base: 'column',
-      lg: 'row',
+      lg: 'row-reverse',
     }
   }
 
@@ -41,10 +41,9 @@ export default function Motion() {
     },
     flexDirection: 'column',
     rowGap: {
-      base: '0.5rem',
-      lg: '1rem'
+      base: '1rem',
     },
-    pr: {
+    pl: {
       base: '0',
       lg: '40px',
     },
@@ -79,12 +78,9 @@ export default function Motion() {
 
 
   const items = [
-    { bg: "./imgs/test.jpg", title: "城市行銷" },
-    { bg: "./imgs/test-2.jpg", title: "商業廣告" },
-    { bg: "./imgs/test-3.jpeg", title: "品牌形象" },
-    { bg: "./imgs/test.jpg", title: "募資影像" },
-    { bg: "./imgs/test.jpg", title: "活動紀錄" },
-    { bg: "./imgs/test.jpg", title: "訪談紀錄" },
+    { bg: "./imgs/test.jpg", title: "創意" },
+    { bg: "./imgs/test-2.jpg", title: "概念" },
+    { bg: "./imgs/test-3.jpeg", title: "獨有" },
   ]
 
   return (

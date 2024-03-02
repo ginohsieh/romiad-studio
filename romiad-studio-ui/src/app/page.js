@@ -4,6 +4,7 @@ import SectionSlider, { Section } from '@/components/SectionSlider';
 import Footer from '@/components/Footer/Footer';
 import Main from './Main';
 import Motion from './Motion';
+import Story from './Story';
 
 export const metadata = {
   title: _metadata.title,
@@ -23,7 +24,8 @@ export default function Home() {
           autoplay: false,
         }}>
         <Section index="1"><Main /></Section>
-        {/* <Section index="2"><Motion /></Section> */}
+        <Section index="2"><Motion /></Section>
+        <Section index="3"><Story /></Section>
         <Section autoHeight><Footer /></Section>
       </SectionSlider>
     </main>

@@ -21,6 +21,8 @@ export default function Main() {
         minW="100%"
         zIndex="-9999"
         objectFit="cover"
+        top="0"
+        left="0"
       >
         <source data-src="./videos/bg.mp4" type="video/mp4" />
       </Box>

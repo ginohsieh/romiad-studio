@@ -18,6 +18,9 @@ const theme = extendTheme({
       body: {
         bg: 'black',
         color: 'white',
+      },
+      '.h100': {
+        height: '100% !important',
       }
     }
   }
