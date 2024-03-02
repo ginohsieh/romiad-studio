@@ -9,7 +9,7 @@ export default function Section({ autoHeight, ...restProps }) {
 
   })
   return (
-    <Box as="section" h="100%" className={className} {...restProps} />
+    <Box as="section" h="100%" className={className} overflow="hidden" {...restProps} />
   )
 }
 

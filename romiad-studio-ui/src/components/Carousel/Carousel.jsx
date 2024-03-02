@@ -36,7 +36,7 @@ const responsive = {
   },
   lg: {
     breakpoint: { max: em * 80, min: em * 62 },
-    items: 3,
+    items: 2,
   },
   md: {
     breakpoint: { max: em * 62, min: em * 48 },
@@ -57,7 +57,8 @@ export default function Carousel({ children, ...restProps }) {
     <MultiCarousel
       swipeable
       draggable
-      showDots
+      showDots={false}
+      arrows={false}
       infinite
       responsive={responsive}
       {...restProps}
