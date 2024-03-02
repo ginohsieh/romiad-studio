@@ -9,7 +9,7 @@ export default function Main() {
   ]
 
   return (
-    <Flex w="auto" direction="column" h="100%" justifyContent="center" rowGap="1rem" overflow="hidden">
+    <Flex w="auto" direction="column" h="100vh" justifyContent="center" overflow="hidden">
       <Box
         as="video"
         preload
@@ -24,15 +24,17 @@ export default function Main() {
       >
         <source data-src="./videos/bg.mp4" type="video/mp4" />
       </Box>
-      <Text
-        as="h1"
-        align="center"
-        textStyle="website-title"
-      >
-        {metadata.title}
-      </Text>
-      <Flex direction="column" justifyContent="center" rowGap="0.25rem">
-        {keywordLines.map((line, index) => (<Text align="center" key={`keyword-line-${index}`}>{line}</Text>))}
+      <Flex w="100%" h="100%" justifyContent="center" direction="column" rowGap="1rem" bgColor="blackAlpha.300">
+        <Text
+          as="h1"
+          align="center"
+          textStyle="website-title"
+        >
+          {metadata.title}
+        </Text>
+        <Flex direction="column" justifyContent="center" rowGap="0.25rem">
+          {keywordLines.map((line, index) => (<Text align="center" key={`keyword-line-${index}`}>{line}</Text>))}
+        </Flex>
       </Flex>
     </Flex>
   )
