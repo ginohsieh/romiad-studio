@@ -110,7 +110,7 @@ export default function CarouselSection({ items = [], title, subtitle, reverse =
                 key={`motion-${title}`}
                 h="100%"
                 w="100%"
-                px="1rem"
+                px="3rem"
                 py="2rem"
               >
                 <Box
@@ -126,7 +126,8 @@ export default function CarouselSection({ items = [], title, subtitle, reverse =
                   objectFit="cover"
                   top="0"
                   left="0"
-                  p="2rem"
+                  px="1rem"
+                  py="2rem"
                 >
                   <source data-src={item.bg} type="video/mp4" />
                 </Box>
