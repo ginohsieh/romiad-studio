@@ -7,18 +7,18 @@ export default function Motion() {
   const { title, subtitle } = config
   const items = useConst(() => [
     {
-      bg: "./imgs/test.jpg",
+      bg: "./videos/city_marketing.mp4",
       title: "城市行銷",
       onClick: () => {
         console.log('open')
         modalDisclosure.onOpen()
       },
     },
-    { bg: "./imgs/test-2.jpg", title: "商業廣告" },
-    { bg: "./imgs/test-3.jpeg", title: "品牌形象" },
-    { bg: "./imgs/test.jpg", title: "募資影像" },
-    { bg: "./imgs/test.jpg", title: "活動紀錄" },
-    { bg: "./imgs/test.jpg", title: "訪談紀錄" },
+    { bg: "./videos/commercial.mp4", title: "商業廣告" },
+    { bg: "./videos/corporate.mp4", title: "品牌形象" },
+    { bg: "./videos/crowd_funding.mp4", title: "募資影像" },
+    { bg: "./videos/event.mp4", title: "活動紀錄" },
+    { bg: "./videos/interview.mp4", title: "訪談紀錄" },
   ])
   return (
     <CarouselSection title={title} subtitle={subtitle} items={items} />

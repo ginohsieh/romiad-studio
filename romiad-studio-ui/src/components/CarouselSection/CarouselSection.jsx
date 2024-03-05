@@ -113,15 +113,27 @@ export default function CarouselSection({ items = [], title, subtitle, reverse =
                 px="1rem"
                 py="2rem"
               >
+                <Box
+                  as="video"
+                  preload
+                  data-autoPlay
+                  muted
+                  loop
+                  position="absolute"
+                  minH="100%"
+                  minW="100%"
+                  zIndex="-9999"
+                  objectFit="cover"
+                  top="0"
+                  left="0"
+                  p="2rem"
+                >
+                  <source data-src={item.bg} type="video/mp4" />
+                </Box>
                 <Flex
                   h="100%"
                   w="100%"
                   alignItems="flex-end"
-                  bgImage={`url(${item.bg})`}
-                  bgSize="cover"
-                  p="2rem"
-                  fontSize="1.25rem"
-                  onClick={item.onClick}
                 >
                   {item.title}
                 </Flex>
