@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import ReactFullpage from "@fullpage/react-fullpage";
 

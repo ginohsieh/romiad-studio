@@ -16,13 +16,13 @@ export default function Home() {
     <main>
       <Navigation />
       <SectionSlider settings={{
-          dots: true,
-          infinite: true,
-          speed: 500,
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          autoplay: false,
-        }}>
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: false,
+      }}>
         <Section index="1"><Main /></Section>
         <Section index="2"><Motion /></Section>
         <Section index="3"><Story /></Section>
