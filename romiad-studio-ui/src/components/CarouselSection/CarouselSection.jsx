@@ -2,7 +2,7 @@
 
 import { Box, Center, Flex, Heading, Stack, Text, useBreakpointValue } from '@chakra-ui/react';
 import Carousel from '../Carousel';
-import CarouselItem from '../Carousel/CarouselItem';
+import VideoBgCarouselItem from './VideoBgCarouselItem';
 
 
 export default function CarouselSection({ items = [], title, subtitle, reverse = false, useOverflowLayout = true }) {
@@ -15,7 +15,7 @@ export default function CarouselSection({ items = [], title, subtitle, reverse =
       base: '8rem',
       lg: '0',
     },
-    [reverse ? 'pr': 'pl']: {
+    [reverse ? 'pr' : 'pl']: {
       base: '0',
       lg: '90px',
     },
@@ -52,7 +52,7 @@ export default function CarouselSection({ items = [], title, subtitle, reverse =
       base: '0.5rem',
       lg: '1rem'
     },
-    [reverse ? 'pl': 'pr']: {
+    [reverse ? 'pl' : 'pr']: {
       base: '0',
       lg: '3rem',
     },
@@ -106,39 +106,10 @@ export default function CarouselSection({ items = [], title, subtitle, reverse =
             sliderClass="h100"
           >
             {items.map(item => (
-              <CarouselItem
-                key={`motion-${title}`}
-                h="100%"
-                w="100%"
-                px="3rem"
-                py="2rem"
-              >
-                <Box
-                  as="video"
-                  preload
-                  data-autoPlay
-                  muted
-                  loop
-                  position="absolute"
-                  minH="100%"
-                  minW="100%"
-                  zIndex="-9999"
-                  objectFit="cover"
-                  top="0"
-                  left="0"
-                  px="1rem"
-                  py="2rem"
-                >
-                  <source data-src={item.bg} type="video/mp4" />
-                </Box>
-                <Flex
-                  h="100%"
-                  w="100%"
-                  alignItems="flex-end"
-                >
-                  {item.title}
-                </Flex>
-              </CarouselItem>)
+              <VideoBgCarouselItem
+                key={`carousel-${title}`}
+                {...item}
+              />)
             )}
           </Carousel>
         </Box>
