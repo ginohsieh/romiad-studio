@@ -32,12 +32,23 @@ export default function LightBox({videos = [], onClose = () => {}}) {
         py="2rem"
       >
         <Flex w="100%" flex="1" py="2rem">
-        <iframe width="100%" height="auto" src="https://www.youtube.com/embed/videoseries?si=nF0Pu0e1Y2AJtgUf&amp;list=PLOhJcywZEKY2GYsmdI63wW_xyChS15fGq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          {/* <iframe width="100%" height="auto" src={selectedVideo.src} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
+        {/* <iframe width="100%" height="auto" src="https://www.youtube.com/embed/videoseries?si=nF0Pu0e1Y2AJtgUf&amp;list=PLOhJcywZEKY2GYsmdI63wW_xyChS15fGq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
+          <iframe width="100%" height="auto" src={selectedVideo.src} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </Flex>
-        {/* <Flex h="120px" columnGap="2rem">
-          {videos?.map(({ thumbnail, name }, index) => (<Box flex="1" h="100%" key={`thumbnail-${index}`} onClick={() => setSelectedVideoIndex(index)}><Image h="100%" alt={name} src={thumbnail} /></Box>))}
-        </Flex> */}
+        <Flex h="120px" columnGap="2rem">
+          {videos?.map(({ thumbnail, name }, index) => (
+            <Flex
+              cursor="pointer"
+              justifyContent="center"
+              flex="1"
+              h="100%"
+              key={`thumbnail-${index}`}
+              onClick={() => setSelectedVideoIndex(index)}
+            >
+              <Image alt={name} src={thumbnail} />
+            </Flex>
+          ))}
+        </Flex>
       </Flex>
     </Flex>
   )
