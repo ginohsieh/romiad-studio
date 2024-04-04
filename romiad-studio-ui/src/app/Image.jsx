@@ -81,7 +81,7 @@ export default function Image() {
       <Flex justifyContent="space-between" alignItems="center" w="100%" maxW="1024px" h="20vh" maxH="24rem" px="2rem">
         <Heading as="h2">{title}</Heading>
         <Flex direction="column" gap="0.2rem" color="whiteAlpha.700">
-          {subtitle.map(row => <Text textAlign="end">{row}</Text>)}
+          {subtitle.map(row => <Text key={row} textAlign="end">{row}</Text>)}
         </Flex>
       </Flex>
       <Flex flex={1} direction="row" w="100%" py="1rem">
