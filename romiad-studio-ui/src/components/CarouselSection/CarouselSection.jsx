@@ -5,10 +5,14 @@ import Carousel from '../Carousel';
 import VideoBgCarouselItem from './VideoBgCarouselItem';
 
 
-export default function CarouselSection({ items = [], title, subtitle, reverse = false, useOverflowLayout = true }) {
+export default function CarouselSection({ items = [], title, subtitle, reverse = false, useOverflowLayout = true, alwaysAutoPlay = true}) {
   const rtl = useBreakpointValue({
     base: false,
     lg: reverse ? true : false
+  })
+  const autoPlay = useBreakpointValue({
+    base: true,
+    xl: alwaysAutoPlay,
   })
   const containerProps = {
     py: {
@@ -99,11 +103,12 @@ export default function CarouselSection({ items = [], title, subtitle, reverse =
           <Carousel
             dot={true}
             infinite={true}
-            autoPlay={true}
+            autoPlay={autoPlay}
             rtl={rtl}
             className="h100"
             itemClass="h100"
             sliderClass="h100"
+            ssr={true}
           >
             {items.map(item => (
               <VideoBgCarouselItem

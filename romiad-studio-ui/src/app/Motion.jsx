@@ -5,7 +5,7 @@ import CarouselSection from '@/components/CarouselSection/CarouselSection';
 import LightBox from '@/components/LightBox';
 import usePortal from 'react-useportal';
 import useLightboxVideos from '@/hooks/lightbox/useLightboxVideos';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Motion() {
   const { title, subtitle } = config

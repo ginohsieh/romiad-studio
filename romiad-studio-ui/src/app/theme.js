@@ -21,6 +21,12 @@ const theme = extendTheme({
       },
       '.h100': {
         height: '100% !important',
+      },
+      '.w100': {
+        width: '100% !important',
+      },
+      '.justify-center': {
+        justifyContent: 'center',
       }
     }
   }

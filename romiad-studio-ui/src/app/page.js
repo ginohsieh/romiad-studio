@@ -5,6 +5,7 @@ import Footer from '@/components/Footer/Footer';
 import Main from './Main';
 import Motion from './Motion';
 import Story from './Story';
+import Image from './Image';
 
 export const metadata = {
   title: _metadata.title,
@@ -26,6 +27,7 @@ export default function Home() {
         <Section index="1"><Main /></Section>
         <Section index="2"><Motion /></Section>
         <Section index="3"><Story /></Section>
+        <Section index="4"><Image /></Section>
         <Section autoHeight><Footer /></Section>
       </SectionSlider>
     </main>

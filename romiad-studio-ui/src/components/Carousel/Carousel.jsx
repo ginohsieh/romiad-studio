@@ -1,7 +1,6 @@
 'use client'
 
 import MultiCarousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
 
 // const responsive = {
 //   superLargeDesktop: {

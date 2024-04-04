@@ -15,6 +15,7 @@
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@fullpage/react-fullpage": "^0.1.42",
+    "@uidotdev/usehooks": "^2.4.1",
     "classnames": "^2.5.1",
     "framer-motion": "^11.0.5",
     "next": "14.1.0",
