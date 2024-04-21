@@ -7,7 +7,7 @@ import { navigation } from '@/config/navigation';
 import NavigationDrawer from './NavigationDrawer';
 import Logo from '../Logo';
 
-export default function Navigation() {
+export default function Navigation({ moveTo }) {
   const [isDrawerOpen, setIsDrawerOpen] = useBoolean(false);
   const displayDrawer = useBreakpointValue({
     base: true,
@@ -15,6 +15,7 @@ export default function Navigation() {
   })
   return (
     <Flex
+      top="0"
       width="100vw"
       position="fixed"
       zIndex="65535"
@@ -31,7 +32,19 @@ export default function Navigation() {
         <Spacer w="2rem" />
         <List display="flex" flexDirection="row" gap="1rem">
           {navigation.map((item, index) => (
-            <ListItem key={`nav-item-${index}`}><Link href={item.href}>{item.display_name}</Link></ListItem>
+            <ListItem key={`nav-item-${index}`}>
+              <Link
+                href={item.href}
+                onClick={() => {
+                  if (item.href.includes('#')) {
+                    const anchor = item.href.slice(item.href.indexOf('#') + 1)
+                    moveTo(anchor)
+                  }
+                }}
+              >
+                {item.display_name}
+              </Link>
+            </ListItem>
           ))}
         </List>
       </Flex>
@@ -44,6 +57,7 @@ export default function Navigation() {
         <Link href="/"><Logo /></Link>
         <IconButton onClick={setIsDrawerOpen.toggle} variant="ghost" colorScheme="white" icon={<RxHamburgerMenu size="2rem" />} />
         <NavigationDrawer
+          moveTo={moveTo}
           isOpen={displayDrawer && isDrawerOpen}
           onClose={setIsDrawerOpen.off}
           navigation={navigation}

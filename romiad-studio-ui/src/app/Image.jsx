@@ -1,7 +1,7 @@
 'use client';
 import { Box, Button, Flex, Heading, Text, useConst } from '@chakra-ui/react';
 import config from '@/config/pages/image.json'
-import LightBox from '@/components/LightBox';
+import { VideoLightBox } from '@/components/LightBox';
 import usePortal from 'react-useportal';
 import useLightboxVideos from '@/hooks/lightbox/useLightboxVideos';
 import { useEffect, useState } from 'react';
@@ -72,10 +72,10 @@ export default function Image() {
   ])
 
   return (
-    <Flex alignItems="center" direction="column" h="100vh" py="8rem">
+    <Flex alignItems="center" direction="column" h="100vh" maxH="100%" pt="8rem">
       {isOpen &&
         <Portal>
-          <LightBox videos={videos} onClose={closePortal} />
+          <VideoLightBox videos={videos} onClose={closePortal} />
         </Portal>
       }
       <Flex justifyContent="space-between" alignItems="center" w="100%" maxW="1024px" h="20vh" maxH="24rem" px="2rem">

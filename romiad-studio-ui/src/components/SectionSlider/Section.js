@@ -6,7 +6,6 @@ export default function Section({ autoHeight, ...restProps }) {
   const className = cls({
     section: true,
     'fp-auto-height': autoHeight,
-
   })
   return (
     <Box as="section" h="100%" className={className} overflow="hidden" {...restProps} />

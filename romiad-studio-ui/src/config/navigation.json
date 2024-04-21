@@ -2,15 +2,15 @@
   "navigation": [
     {
       "display_name": "Motion 動態影像",
-      "href": "/"
+      "href": "/#motion"
     },
     {
       "display_name": "Story 社群短片",
-      "href": "/story"
+      "href": "/#story"
     },
     {
       "display_name": "Image 平面攝影",
-      "href": "/image"
+      "href": "/#image"
     },
     {
       "display_name": "Us 關於盧米",

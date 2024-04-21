@@ -29,7 +29,7 @@ export default function CarouselSection({ items = [], title, subtitle, reverse =
     },
     maxW: useOverflowLayout ? '115vw' : '100vw',
     h: '100vh',
-    maxH: '100vh',
+    maxH: '100%',
     scrollX: 'hidden',
     justifyContent: {
       base: 'center',
@@ -75,6 +75,13 @@ export default function CarouselSection({ items = [], title, subtitle, reverse =
     size: "lg"
   }
 
+  const titleBlockSubtitleProps = {
+    display: {
+      base: 'none',
+      lg: 'flex'
+    }
+  }
+
   const carouselContainerProps = {
     flex: '1',
     overflow: 'hidden',
@@ -95,7 +102,7 @@ export default function CarouselSection({ items = [], title, subtitle, reverse =
       <Flex {...containerProps}>
         <Center {...titleBlockProps}>
           <Heading {...titleBlockHeadingProps}>{title}</Heading>
-          <Stack w="100%" gap="0.2rem" color="whiteAlpha.700">
+          <Stack w="100%" gap="0.2rem" color="whiteAlpha.700" {...titleBlockSubtitleProps}>
             {subtitle.map((row, index) => <Text key={`subtitle-${index}`}>{row}</Text>)}
           </Stack>
         </Center>

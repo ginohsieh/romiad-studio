@@ -5,16 +5,22 @@ import CarouselSection from '@/components/CarouselSection';
 import usePortal from 'react-useportal';
 import { useState } from 'react';
 import useLightboxVideos from '@/hooks/lightbox/useLightboxVideos';
-import LightBox from '@/components/LightBox';
-import { Box, useConst } from '@chakra-ui/react';
+import { VideoLightBox } from '@/components/LightBox';
+import { Box, Flex, useBreakpointValue, useConst } from '@chakra-ui/react';
+import useLightboxPlaylists from '@/hooks/lightbox/useLightboxPlaylists';
+import PlaylistBox from '@/components/LightBox/PlaylistLightBox';
 
 export default function Story() {
   const { title, subtitle } = config;
-
+  const lightboxForm = useBreakpointValue({
+    base: 'playlist',
+    lg: 'video'
+  });
 
   const { Portal, openPortal, closePortal, isOpen } = usePortal()
   const [lightboxType, setLightboxType] = useState('')
   const videos = useLightboxVideos(lightboxType)
+  const playlist = useLightboxPlaylists(lightboxType)
 
   const items = useConst(() => [
     {
@@ -44,10 +50,11 @@ export default function Story() {
   ])
 
   return (
-    <Box>
+    <Flex h="100%">
       {isOpen &&
         <Portal>
-          <LightBox videos={videos} onClose={closePortal} />
+          {lightboxForm === 'playlist' && <PlaylistBox playlistSrc={playlist} onClose={closePortal} />}
+          {lightboxForm === 'video' && <VideoLightBox videos={videos} onClose={closePortal} />}
         </Portal>
       }
       <CarouselSection
@@ -58,6 +65,6 @@ export default function Story() {
         useOverflowLayout={false}
         alwaysAutoPlay={false}
       />
-    </Box>
+    </Flex>
   )
 }

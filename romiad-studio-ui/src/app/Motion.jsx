@@ -1,8 +1,8 @@
 'use client';
-import { Box, useConst } from '@chakra-ui/react';
+import { Box, Flex, useConst } from '@chakra-ui/react';
 import config from '@/config/pages/motion.json'
 import CarouselSection from '@/components/CarouselSection/CarouselSection';
-import LightBox from '@/components/LightBox';
+import { VideoLightBox } from '@/components/LightBox';
 import usePortal from 'react-useportal';
 import useLightboxVideos from '@/hooks/lightbox/useLightboxVideos';
 import { useEffect, useState } from 'react';
@@ -64,13 +64,13 @@ export default function Motion() {
     },
   ])
   return (
-    <Box>
+    <Flex h="100%">
       {isOpen &&
         <Portal>
-          <LightBox videos={videos} onClose={closePortal} />
+          <VideoLightBox videos={videos} onClose={closePortal} />
         </Portal>
       }
       <CarouselSection title={title} subtitle={subtitle} items={items} />
-    </Box>
+    </Flex>
   )
 }

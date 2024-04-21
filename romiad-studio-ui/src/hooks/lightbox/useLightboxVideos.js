@@ -234,6 +234,70 @@ const lightboxVideos = {
       name: '匠師傳奇－王武雄︱The Ceramic Appliqué Legend'
     },
   ],
+  story_creative: [
+    {
+        src: 'https://www.youtube.com/embed/xSmjzh-RZt4',
+        thumbnail: 'https://i.ytimg.com/vi/xSmjzh-RZt4/hqdefault.jpg',
+        name: 'DONKEY Lucky Cat 招財貓'
+    },
+    {
+        src: 'https://www.youtube.com/embed/C2tkE1ur22s',
+        thumbnail: 'https://i.ytimg.com/vi/C2tkE1ur22s/hqdefault.jpg',
+        name: '員林百年仙草'
+    },
+    {
+        src: 'https://www.youtube.com/embed/dhobQ6-MlMU',
+        thumbnail: 'https://i.ytimg.com/vi/dhobQ6-MlMU/hqdefault.jpg',
+        name: '旅遊日記 - 九份'
+    },
+    {
+        src: 'https://www.youtube.com/embed/EuI0ptvWD1w',
+        thumbnail: 'https://i.ytimg.com/vi/EuI0ptvWD1w/hqdefault.jpg',
+        name: '御木軒冰室'
+    },
+    {
+        src: 'https://www.youtube.com/embed/8FMQdogEiM4',
+        thumbnail: 'https://i.ytimg.com/vi/8FMQdogEiM4/hqdefault.jpg',
+        name: '菓實日'
+    },
+    {
+        src: 'https://www.youtube.com/embed/6L6v0z13_qg',
+        thumbnail: 'https://i.ytimg.com/vi/6L6v0z13_qg/hqdefault.jpg',
+        name: 'PowerBOMB－Coast'
+    },
+    {
+        src: 'https://www.youtube.com/embed/mguf2_DpD-w',
+        thumbnail: 'https://i.ytimg.com/vi/mguf2_DpD-w/hqdefault.jpg',
+        name: 'PowerBOMB－Beach'
+    }
+  ],
+  story_concept: [
+    {
+        src: 'https://www.youtube.com/embed/wGQpvtGT3Bc',
+        thumbnail: 'https://i.ytimg.com/vi/wGQpvtGT3Bc/hqdefault.jpg',
+        name: '施華洛斯奇 Swarovski'
+    },
+    {
+        src: 'https://www.youtube.com/embed/u2N9ksu4OPE',
+        thumbnail: 'https://i.ytimg.com/vi/u2N9ksu4OPE/hqdefault.jpg',
+        name: '北海道戀人－巧克力/牛奶酥餅條'
+    },
+    {
+        src: 'https://www.youtube.com/embed/uN3WqqMvHrU',
+        thumbnail: 'https://i.ytimg.com/vi/uN3WqqMvHrU/hqdefault.jpg',
+        name: 'RAW'
+    },
+    {
+        src: 'https://www.youtube.com/embed/0Ou3s1db_EY',
+        thumbnail: 'https://i.ytimg.com/vi/0Ou3s1db_EY/hqdefault.jpg',
+        name: '碳佐麻里'
+    },
+    {
+        src: 'https://www.youtube.com/embed/0HvTMStZQto',
+        thumbnail: 'https://i.ytimg.com/vi/0HvTMStZQto/hqdefault.jpg',
+        name: '藏壽司'
+    }
+  ],
   story_unique: [
     {
       src: 'https://www.youtube.com/embed/dL1-ED9fovY',
