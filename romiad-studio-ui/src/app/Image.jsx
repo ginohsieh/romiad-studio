@@ -1,12 +1,25 @@
 'use client';
-import { Box, Button, Flex, Heading, Text, useConst } from '@chakra-ui/react';
+import { Box, Button, Flex, Heading, Text, useBreakpointValue, useConst } from '@chakra-ui/react';
 import config from '@/config/pages/image.json'
 import { VideoLightBox } from '@/components/LightBox';
 import usePortal from 'react-useportal';
 import useLightboxVideos from '@/hooks/lightbox/useLightboxVideos';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import Carousel from '@/components/Carousel';
+import CarouselItem from '@/components/Carousel/CarouselItem';
+
+const responsive = {
+  base: {
+    breakpoint: { max: 65536, min: 0 },
+    items: 1,
+  },
+}
 
 export default function Image() {
+  const displayInCarousel = useBreakpointValue({
+    base: true,
+    xl: false,
+  })
   const { title, subtitle } = config
   const { Portal, openPortal, closePortal, isOpen } = usePortal()
   const [lightboxType, setLightboxType] = useState('')
@@ -72,7 +85,7 @@ export default function Image() {
   ])
 
   return (
-    <Flex alignItems="center" direction="column" h="100vh" maxH="100%" pt="8rem">
+    <Flex alignItems="center" direction="column" h="100vh" maxH="100%" pt="4rem">
       {isOpen &&
         <Portal>
           <VideoLightBox videos={videos} onClose={closePortal} />
@@ -84,52 +97,86 @@ export default function Image() {
           {subtitle.map(row => <Text key={row} textAlign="end">{row}</Text>)}
         </Flex>
       </Flex>
-      <Flex flex={1} direction="row" w="100%" py="1rem">
-        {items.map((item) => (
-          <Flex
-            flex={1}
-            key={title} bgImage={item.bg}
-            bgSize="cover"
-            bgPosition="center"
-            h="100%"
-            justifyContent="center"
-            alignItems="center"
-            direction="column"
-            rowGap="0.75rem"
-            cursor="pointer"
+      {displayInCarousel && (
+        <Flex flex={1} width="100%">
+          <Carousel
+            dot={true}
+            infinite={true}
+            autoPlay={true}
+            className="h100"
+            itemClass="h100"
+            sliderClass="h100"
+            containerClass="w100"
+            ssr={true}
+            responsive={responsive}
+            arrows={true}
           >
+            {
+              items.map((item, index) => (
+                <CarouselItem h="100%" w="100%" key={`image-${index}`}>
+                  <Flex
+                    h="100%"
+                    w="100%"
+                    key={title} bgImage={item.bg}
+                    bgSize="cover"
+                    bgPosition="center"
+                    justifyContent="center"
+                    alignItems="center"
+                    direction="column"
+                    rowGap="0.75rem"
+                    cursor="pointer"
+                  >
+                    <Flex
+                      h="100%"
+                      w="100%"
+                      fontSize="1rem"
+                      justifyContent="center"
+                      alignItems="center"
+                    >
+                      <Text>{item.title}</Text>
+                    </Flex>
+                  </Flex>
+                </CarouselItem>
+              ))
+            }
+          </Carousel>
+        </Flex>
+      )}
+      {!displayInCarousel && (
+        <Flex flex={1} direction="row" w="100%" py="1rem">
+          {items.map((item) => (
             <Flex
+              flex={1}
+              key={title} bgImage={item.bg}
+              bgSize="cover"
+              bgPosition="center"
               h="100%"
-              w="100%"
-              fontSize="1rem"
-              opacity={0}
-              _hover={{
-                opacity: 1,
-                bgColor: "blackAlpha.800"
-              }}
-              transition="opacity 0.2s"
               justifyContent="center"
               alignItems="center"
+              direction="column"
+              rowGap="0.75rem"
+              cursor="pointer"
+            >
+              <Flex
+                h="100%"
+                w="100%"
+                fontSize="1rem"
+                opacity={0}
+                _hover={{
+                  opacity: 1,
+                  bgColor: "blackAlpha.800"
+                }}
+                transition="opacity 0.2s"
+                justifyContent="center"
+                alignItems="center"
 
-            >
-              <Text>{item.title}</Text>
+              >
+                <Text>{item.title}</Text>
+              </Flex>
             </Flex>
-            {/* <Box
-              borderColor="white"
-              borderWidth="1px"
-              borderRadius="2rem"
-              fontSize="0.6rem"
-              px="0.75rem"
-              py="0.25rem"
-              onClick={item.onClick}
-              _hover={{ bg: "whiteAlpha.300" }}
-              transition="background-color 0.2s"
-            >
-              VIEW MORE
-            </Box> */}
-          </Flex>
-        ))}
-      </Flex>
+          ))}
+        </Flex>
+      )}
     </Flex>
   )
 }
