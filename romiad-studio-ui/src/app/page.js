@@ -6,8 +6,6 @@ export const metadata = {
   keywords: _metadata.keywords,
 }
 
-const anchors = ['main', 'motion', 'story', 'image', 'footer']
-
 export default function Home() {
   return (
     <main>

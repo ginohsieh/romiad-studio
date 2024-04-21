@@ -1,21 +1,21 @@
 'use client';
 
-import SectionSlider, { Section } from '@/components/SectionSlider';
+import usePortal from 'react-useportal';
 import ReactFullpage from '@fullpage/react-fullpage';
 import Main from './Main'
 import Motion from './Motion';
 import Story from './Story';
 import Image from './Image';
+import SectionSlider, { Section } from '@/components/SectionSlider';
 import Footer from '@/components/Footer/Footer';
 import Navigation from '@/components/Navigation';
-import usePortal from 'react-useportal';
 
 const anchors = ['main', 'motion', 'story', 'image', 'footer']
 
 export default function Fullpage() {
   const { Portal } = usePortal({
     isOpen: true,
-    bindTo: document.getElementsByTagName('body')[0],
+    bindTo: typeof document !== 'undefined' && document?.getElementsByTagName('body')[0],
   })
   return (
     <ReactFullpage
@@ -30,7 +30,6 @@ export default function Fullpage() {
             slidesToScroll: 1,
             autoplay: false,
             anchors,
-            fixedElements: ['#navigation'],
           }}>
             <Section index="1" data-anchor="main"><Main /></Section>
             <Section index="2" data-anchor="motion"><Motion /></Section>
