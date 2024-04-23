@@ -1,4 +1,4 @@
-import { Drawer, DrawerBody, DrawerContent, DrawerOverlay, Flex, IconButton, List, ListItem } from '@chakra-ui/react';
+import { Drawer, DrawerBody, DrawerContent, DrawerOverlay, Flex, List, ListItem } from '@chakra-ui/react';
 import Link from 'next/link';
 import { RxHamburgerMenu } from 'react-icons/rx';
 

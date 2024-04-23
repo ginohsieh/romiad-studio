@@ -9,7 +9,7 @@ export default function Main() {
   ]
 
   return (
-    <Flex w="auto" direction="column" h="100%" justifyContent="center" overflow="hidden">
+    <Flex w="auto" direction="column" h="100vh" maxH="100%" justifyContent="center" overflow="hidden">
       <Box
         as="video"
         preload

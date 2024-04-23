@@ -1,9 +1,10 @@
 'use client'
 
-import { Flex, List, ListItem, IconButton, useBoolean, useBreakpointValue, Spacer } from '@chakra-ui/react';
+import { Flex, List, ListItem, IconButton, useBoolean, useBreakpointValue, Spacer, useConst } from '@chakra-ui/react';
 import { RxHamburgerMenu } from "react-icons/rx";
 import Link from 'next/link';
 import { navigation } from '@/config/navigation';
+import { useCallback } from 'react';
 import NavigationDrawer from './NavigationDrawer';
 import Logo from '../Logo';
 
@@ -13,6 +14,10 @@ export default function Navigation({ moveTo }) {
     base: true,
     md: false,
   })
+
+  const moveToMain = useCallback(() => {
+    moveTo('main')
+  }, [moveTo])
   return (
     <Flex
       top="0"
@@ -28,7 +33,7 @@ export default function Navigation({ moveTo }) {
         display={{ base: 'none', md: 'flex' }}
         alignItems="center"
       >
-        <Link href="/"><Logo /></Link>
+        <Link href="/#main" onClick={moveToMain}><Logo /></Link>
         <Spacer w="2rem" />
         <List display="flex" flexDirection="row" gap="1rem">
           {navigation.map((item, index) => (
@@ -54,7 +59,7 @@ export default function Navigation({ moveTo }) {
         justifyContent="space-between"
         px="2rem"
       >
-        <Link href="/"><Logo /></Link>
+        <Link href="/#main" onClick={moveToMain}><Logo /></Link>
         <IconButton onClick={setIsDrawerOpen.toggle} variant="ghost" colorScheme="white" icon={<RxHamburgerMenu size="2rem" />} />
         <NavigationDrawer
           moveTo={moveTo}
