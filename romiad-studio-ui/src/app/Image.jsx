@@ -11,7 +11,7 @@ import CarouselItem from '@/components/Carousel/CarouselItem';
 const responsive = {
   base: {
     breakpoint: { max: 65536, min: 0 },
-    items: 1,
+    items: 3,
   },
 }
 
@@ -59,7 +59,7 @@ export default function Image() {
       },
     },
     {
-      bg: "./imgs/food/cover.mp4",
+      bg: "./imgs/food/cover.jpg",
       title: "食品攝影",
       onClick: () => {
         setLightboxType('food')
@@ -67,7 +67,7 @@ export default function Image() {
       },
     },
     {
-      bg: "./imgs/street/cover.jpg",
+      bg: "./imgs/streetsnap/cover.jpg",
       title: "街頭拍攝",
       onClick: () => {
         setLightboxType('street')
@@ -100,6 +100,7 @@ export default function Image() {
       {displayInCarousel && (
         <Flex flex={1} width="100%">
           <Carousel
+            partialVisible={true}
             dot={true}
             infinite={true}
             autoPlay={true}
