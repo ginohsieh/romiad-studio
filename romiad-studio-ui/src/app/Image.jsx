@@ -84,16 +84,44 @@ export default function Image() {
     },
   ])
 
+  const titleBlockProps = {
+    justifyContent: {
+      base: "center",
+      lg: "space-between",
+    },
+    alignItems: "center",
+    w: "100%",
+    maxW: "1024px",
+    h: "15vh",
+    maxH: "24rem",
+    px: "2rem",
+  }
+
+  const titleBlockHeadingProps = {
+    as: "h2",
+    size: "lg"
+  }
+
+  const titleBlockSubtitleProps = {
+    display: {
+      base: 'none',
+      lg: 'flex',
+    },
+    gap: '0.2rem',
+    color: 'whiteAlpha.700',
+    flexDirection: 'column',
+  }
+
   return (
-    <Flex alignItems="center" direction="column" h="100vh" maxH="100%" pt="4rem">
+    <Flex alignItems="center" direction="column" h="100vh" maxH="1080px" pt="4rem">
       {isOpen &&
         <Portal>
           <VideoLightBox videos={videos} onClose={closePortal} />
         </Portal>
       }
-      <Flex justifyContent="space-between" alignItems="center" w="100%" maxW="1024px" h="20vh" maxH="24rem" px="2rem">
-        <Heading as="h2">{title}</Heading>
-        <Flex direction="column" gap="0.2rem" color="whiteAlpha.700">
+      <Flex {...titleBlockProps}>
+        <Heading {...titleBlockHeadingProps}>{title}</Heading>
+        <Flex {...titleBlockSubtitleProps}>
           {subtitle.map(row => <Text key={row} textAlign="end">{row}</Text>)}
         </Flex>
       </Flex>

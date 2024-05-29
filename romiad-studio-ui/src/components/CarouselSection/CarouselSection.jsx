@@ -27,13 +27,12 @@ export default function CarouselSection({ items = [], title, subtitle, reverse =
       base: '100vw',
       xl: useOverflowLayout ? '115vw' : '100vw',
     },
-    maxW: useOverflowLayout ? '115vw' : '100vw',
     h: '100vh',
     maxH: '100%',
     scrollX: 'hidden',
     justifyContent: {
       base: 'center',
-      lg: 'center',
+      lg: 'flex-end',
     },
     alignItems: {
       base: 'center',
@@ -46,7 +45,8 @@ export default function CarouselSection({ items = [], title, subtitle, reverse =
 
   const titleBlockProps = {
     display: 'flex',
-    w: '400px',
+    minW: '400px',
+    flex: 0,
     alignItems: {
       base: 'center',
       lg: 'flex-start'
@@ -84,6 +84,7 @@ export default function CarouselSection({ items = [], title, subtitle, reverse =
 
   const carouselContainerProps = {
     flex: '1',
+    maxW: useOverflowLayout ? '1920px' : '1680px',
     overflow: 'hidden',
     h: {
       base: 'auto',
