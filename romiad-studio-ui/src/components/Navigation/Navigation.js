@@ -8,7 +8,7 @@ import { useCallback } from 'react';
 import NavigationDrawer from './NavigationDrawer';
 import Logo from '../Logo';
 
-export default function Navigation({ moveTo }) {
+export default function Navigation({ moveTo = () => {} }) {
   const [isDrawerOpen, setIsDrawerOpen] = useBoolean(false);
   const displayDrawer = useBreakpointValue({
     base: true,
