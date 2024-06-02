@@ -2,7 +2,6 @@ import _metadata from "@/config/metadata";
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer/Footer';
 import { Button, Flex, Heading, Image, Spacer, Text } from '@chakra-ui/react';
-import bookingSvg from './svg/booking.svg';
 import Link from 'next/link';
 
 export const metadata = {
