@@ -49,7 +49,7 @@ export default function Home() {
             <Image
               w="100%"
               objectFit="cover"
-              src="/imgs/about_us.webp"
+              src="./imgs/about_us.webp"
               alt="about_us"
             />
           </Flex>
@@ -60,27 +60,27 @@ export default function Home() {
           </Flex>
           <Flex columnGap="6rem">
             <Flex direction="column" py="48px" rowGap="2rem" alignItems="center">
-              <Image src="/imgs/prize.webp" alt="prize" w="60px"/>
+              <Image src="./imgs/prize.webp" alt="prize" w="60px"/>
               <Text textAlign="center">預約諮詢</Text>
             </Flex>
             <Flex direction="column" py="48px" rowGap="2rem" alignItems="center">
-              <Image src="/imgs/prize.webp" alt="prize" w="60px"/>
+              <Image src="./imgs/prize.webp" alt="prize" w="60px"/>
               <Text textAlign="center">需求確認</Text>
             </Flex>
             <Flex direction="column" py="48px" rowGap="2rem" alignItems="center">
-              <Image src="/imgs/prize.webp" alt="prize" w="60px"/>
+              <Image src="./imgs/prize.webp" alt="prize" w="60px"/>
               <Text textAlign="center">報價簽約</Text>
             </Flex>
             <Flex direction="column" py="48px" rowGap="2rem" alignItems="center">
-              <Image src="/imgs/prize.webp" alt="prize" w="60px"/>
+              <Image src="./imgs/prize.webp" alt="prize" w="60px"/>
               <Text textAlign="center">腳本企劃</Text>
             </Flex>
             <Flex direction="column" py="48px" rowGap="2rem" alignItems="center">
-              <Image src="/imgs/prize.webp" alt="prize" w="60px"/>
+              <Image src="./imgs/prize.webp" alt="prize" w="60px"/>
               <Text textAlign="center">剪輯拍攝</Text>
             </Flex>
             <Flex direction="column" py="48px" rowGap="2rem" alignItems="center">
-              <Image src="/imgs/prize.webp" alt="prize" w="60px"/>
+              <Image src="./imgs/prize.webp" alt="prize" w="60px"/>
               <Text textAlign="center">交付成品</Text>
             </Flex>
           </Flex>
@@ -98,23 +98,23 @@ export default function Home() {
           </Flex>
           <Flex columnGap="1rem">
             <Flex direction="column" py="48px" rowGap="2rem" width="200px" alignItems="center">
-              <Image src="/imgs/prize.webp" alt="prize" w="80px"/>
+              <Image src="./imgs/prize.webp" alt="prize" w="80px"/>
               <Text textAlign="center">2020美麗基隆影片創作比賽<br/>Beautiful Keelung<br/>│​首獎＆二獎</Text>
             </Flex>
             <Flex direction="column" py="48px" rowGap="2rem" width="200px" alignItems="center">
-              <Image src="/imgs/prize.webp" alt="prize" w="80px"/>
+              <Image src="./imgs/prize.webp" alt="prize" w="80px"/>
               <Text textAlign="center">2022屏東創意廣告節<br/>Pingtung Ad Festival<br/>│​最佳視覺設計獎</Text>
             </Flex>
             <Flex direction="column" py="48px" rowGap="2rem" width="200px" alignItems="center">
-              <Image src="/imgs/prize.webp" alt="prize" w="80px"/>
+              <Image src="./imgs/prize.webp" alt="prize" w="80px"/>
               <Text textAlign="center">2021美麗基隆影片創作比賽<br/>Beautiful Keelung<br/>│優選</Text>
             </Flex>
             <Flex direction="column" py="48px" rowGap="2rem" width="200px" alignItems="center">
-              <Image src="/imgs/prize.webp" alt="prize" w="80px"/>
+              <Image src="./imgs/prize.webp" alt="prize" w="80px"/>
               <Text textAlign="center">旱溪媽祖遶境十八庄200週年 - 微電影拍攝比賽<br/>│​佳作</Text>
             </Flex>
             <Flex direction="column" py="48px" rowGap="2rem" width="200px" alignItems="center">
-              <Image src="/imgs/prize.webp" alt="prize" w="80px"/>
+              <Image src="./imgs/prize.webp" alt="prize" w="80px"/>
               <Text textAlign="center">in臺南‧無影藏 - 2021臺南市文化資產影像競賽<br/>│入圍</Text>
             </Flex>
           </Flex>
