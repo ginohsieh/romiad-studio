@@ -1,12 +1,14 @@
 'use client';
-import { Box, Button, Flex, Heading, Text, useBreakpointValue, useConst } from '@chakra-ui/react';
+import { Flex, Heading, Text, useBreakpointValue, useConst } from '@chakra-ui/react';
 import config from '@/config/pages/image.json'
 import usePortal from 'react-useportal';
 import useLightboxImages from '@/hooks/lightbox/useLightboxImages';
 import { useState } from 'react';
 import Carousel from '@/components/Carousel';
 import CarouselItem from '@/components/Carousel/CarouselItem';
-import WaterfallLightbox from '@/components/LightBox/WaterfallLightBox';
+import dynamic from 'next/dynamic';
+
+const WaterfallLightbox = dynamic(() => import('@/components/LightBox/WaterfallLightBox'), { ssr: false });
 
 const responsive = {
   base: {
