@@ -8,7 +8,7 @@ import { useCallback } from 'react';
 import NavigationDrawer from './NavigationDrawer';
 import Logo from '../Logo';
 
-export default function Navigation({ moveTo = () => {} }) {
+export default function Navigation({ moveTo = () => {}, ...restProps }) {
   const [isDrawerOpen, setIsDrawerOpen] = useBoolean(false);
   const displayDrawer = useBreakpointValue({
     base: true,
@@ -27,6 +27,7 @@ export default function Navigation({ moveTo = () => {} }) {
       justifyContent="center"
       alignItems="center"
       py="2rem"
+      {...restProps}
     >
       <Flex
         as="nav"

@@ -1,12 +1,12 @@
 'use client';
 import { Box, Button, Flex, Heading, Text, useBreakpointValue, useConst } from '@chakra-ui/react';
 import config from '@/config/pages/image.json'
-import { VideoLightBox } from '@/components/LightBox';
 import usePortal from 'react-useportal';
-import useLightboxVideos from '@/hooks/lightbox/useLightboxVideos';
+import useLightboxImages from '@/hooks/lightbox/useLightboxImages';
 import { useState } from 'react';
 import Carousel from '@/components/Carousel';
 import CarouselItem from '@/components/Carousel/CarouselItem';
+import WaterfallLightbox from '@/components/LightBox/WaterfallLightBox';
 
 const responsive = {
   base: {
@@ -23,11 +23,11 @@ export default function Image() {
   const { title, subtitle } = config
   const { Portal, openPortal, closePortal, isOpen } = usePortal()
   const [lightboxType, setLightboxType] = useState('')
-  const videos = useLightboxVideos(lightboxType)
+  const images = useLightboxImages(lightboxType)
 
   const items = useConst(() => [
     {
-      bg: "./imgs/product/cover.jpg",
+      bg: "./imgs/images/product/cover.jpg",
       title: "產品攝影",
       onClick: () => {
         setLightboxType('product')
@@ -35,7 +35,7 @@ export default function Image() {
       },
     },
     {
-      bg: "./imgs/luxury/cover.jpg",
+      bg: "./imgs/images/luxury/cover.jpg",
       title: "精品攝影",
       onClick: () => {
         setLightboxType('luxury')
@@ -43,7 +43,7 @@ export default function Image() {
       },
     },
     {
-      bg: "./imgs/event/cover.jpg",
+      bg: "./imgs/images/event/cover.jpg",
       title: "活動紀錄",
       onClick: () => {
         setLightboxType('event')
@@ -51,7 +51,7 @@ export default function Image() {
       },
     },
     {
-      bg: "./imgs/portrait/cover.jpg",
+      bg: "./imgs/images/portrait/cover.jpg",
       title: "人像攝影",
       onClick: () => {
         setLightboxType('portrait')
@@ -59,7 +59,7 @@ export default function Image() {
       },
     },
     {
-      bg: "./imgs/food/cover.jpg",
+      bg: "./imgs/images/food/cover.jpg",
       title: "食品攝影",
       onClick: () => {
         setLightboxType('food')
@@ -67,17 +67,18 @@ export default function Image() {
       },
     },
     {
-      bg: "./imgs/streetsnap/cover.jpg",
+      bg: "./imgs/images/streetsnap/cover.jpg",
       title: "街頭拍攝",
       onClick: () => {
-        setLightboxType('street')
+        setLightboxType('streetsnap')
         openPortal()
       },
     },
     {
-      bg: "./imgs/landscape/cover.jpg",
+      bg: "./imgs/images/landscape/cover.jpg",
       title: "風景攝影",
       onClick: () => {
+        console.log('test')
         setLightboxType('landscape')
         openPortal()
       },
@@ -116,7 +117,7 @@ export default function Image() {
     <Flex alignItems="center" direction="column" h="100vh" maxH="1080px" pt="4rem">
       {isOpen &&
         <Portal>
-          <VideoLightBox videos={videos} onClose={closePortal} />
+          <WaterfallLightbox items={images} onClose={closePortal} />
         </Portal>
       }
       <Flex {...titleBlockProps}>
@@ -142,7 +143,7 @@ export default function Image() {
           >
             {
               items.map((item, index) => (
-                <CarouselItem h="100%" w="100%" key={`image-${index}`}>
+                <CarouselItem h="100%" w="100%" key={`image-${index}`} onClick={item.onClick}>
                   <Flex
                     h="100%"
                     w="100%"
@@ -185,6 +186,7 @@ export default function Image() {
               direction="column"
               rowGap="0.75rem"
               cursor="pointer"
+              onClick={item.onClick}
             >
               <Flex
                 h="100%"

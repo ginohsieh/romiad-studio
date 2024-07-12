@@ -2,6 +2,13 @@ import _metadata from "@/config/metadata";
 import { Button, Checkbox, CheckboxGroup, Divider, Flex, FormControl, FormLabel, Heading, Input, Link, Radio, RadioGroup, Stack, Text, Textarea } from '@chakra-ui/react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer/Footer';
+import Form from './components/Form';
+import InputField from './components/InputField';
+import FormRow from './components/FormRow';
+import CheckboxField from './components/CheckboxField';
+import { useMemo } from 'react';
+import TextareaField from './components/TextareaField';
+import RadioField from './components/RadioField';
 
 export const metadata = {
   title: _metadata.title,
@@ -30,115 +37,94 @@ export default function Home() {
 
   return (
     <main>
-      <Navigation />
+      <Navigation bgColor="black" />
       <Flex width="100%" justifyContent="center" pt="120px" direction="column" alignItems="center">
         <Flex py="4rem">
           <Heading as="h2" size="lg">Contact us 聯絡我們</Heading>
         </Flex>
-        <Flex
-          as="form"
-          w="100%"
-          minW="600px"
-          maxW="1280px"
-          justifyContent="center"
-          alignItems="center"
-          direction="column"
-          rowGap="1rem"
-          px="2rem"
-        >
-          <Flex w="100%" columnGap="1rem" {...flexFormRowProps}>
-            <FormControl flex="1">
-              <FormLabel>姓名（個人或公司名稱）</FormLabel>
-              <Input type="text" />
-            </FormControl>
-            <FormControl flex="1">
-              <FormLabel>Email</FormLabel>
-              <Input type="email" />
-            </FormControl>
-          </Flex>
-          <Flex w="100%" columnGap="1rem" {...flexFormRowProps}>
-            <FormControl>
-              <FormLabel>您的網址（FB/IG等平台網址皆可）</FormLabel>
-              <Input type="url" />
-            </FormControl>
-          </Flex>
+        <Form>
+          <FormRow>
+            <InputField
+              label="姓名（個人或公司名稱）"
+              type="text"
+              name="name"
+            />
+            <InputField
+              label="Email"
+              type="email"
+              name="email"
+            />
+          </FormRow>
+          <FormRow>
+            <InputField
+              label="您的網址（FB/IG等平台網址皆可）"
+              type="url"
+              name="url"
+            />
+          </FormRow>
           <Divider mb="1rem" />
-          <Flex w="100%" {...flexFormRowProps}>
-            <FormControl>
-              <FormLabel>欲拍攝影像類型</FormLabel>
-              <CheckboxGroup>
-                <Stack {...checkboxStackProps}>
-                  <Checkbox value="commercial">商業廣告</Checkbox>
-                  <Checkbox value="corporate">品牌形象</Checkbox>
-                  <Checkbox value="event">活動紀錄</Checkbox>
-                  <Checkbox value="city_marketing">城市行銷</Checkbox>
-                  <Checkbox value="crowdfunding">募資影像</Checkbox>
-                  <Checkbox value="interview">訪談紀錄</Checkbox>
-                  <Checkbox value="other">其他</Checkbox>
-                </Stack>
-              </CheckboxGroup>
-            </FormControl>
-          </Flex>
-          <Flex w="100%" {...flexFormRowProps}>
-            <FormControl>
-              <FormLabel>敘述您的需求（200字內精簡敘述即可）</FormLabel>
-              <Textarea />
-            </FormControl>
-          </Flex>
-          <Flex w="100%" columnGap="1rem" {...flexFormRowProps}>
-            <FormControl>
-              <FormLabel>您希望何時開始</FormLabel>
-              <Input type="date" />
-            </FormControl>
-          </Flex>
+          <FormRow>
+            <CheckboxField
+              label="欲拍攝影像類型"
+              checkboxList={[
+                { value: "commercial", label: "商業廣告" },
+                { value: "corporate", label: "品牌形象" },
+                { value: "event", label: "活動紀錄" },
+                { value: "city_marketing", label: "城市行銷" },
+                { value: "crowdfunding", label: "募資影像" },
+                { value: "interview", label: "訪談紀錄" },
+                { value: "other", label: "其他" },
+              ]}
+            />
+          </FormRow>
+          <FormRow>
+            <TextareaField label="敘述您的需求（200字內精簡敘述即可）" name="description" />
+          </FormRow>
+          <FormRow>
+            <InputField label="您希望何時開始" type="date" name="start_date" />
+          </FormRow>
           <Divider mb="1rem" />
-          <Flex w="100%" {...flexFormRowProps}>
-            <FormControl>
-              <FormLabel>您的預算為何</FormLabel>
-              <RadioGroup>
-                <Stack {...checkboxStackProps}>
-                  <Radio value="0">5萬以下</Radio>
-                  <Radio value='5'>5~19萬</Radio>
-                  <Radio value='20'>20~49萬</Radio>
-                  <Radio value='50'>50萬</Radio>
-                </Stack>
-              </RadioGroup>
-            </FormControl>
-          </Flex>
-          <Flex w="100%" {...flexFormRowProps}>
-            <FormControl>
-              <FormLabel>有無希望的結案時間</FormLabel>
-              <RadioGroup>
-                <Stack {...checkboxStackProps}>
-                  <Radio value="Y">有</Radio>
-                  <Radio value='N'>沒有</Radio>
-                  <Radio value='ASAP'>沒有，但希望儘快</Radio>
-                </Stack>
-              </RadioGroup>
-            </FormControl>
-          </Flex>
-          <Flex w="100%" {...flexFormRowProps}>
-            <FormControl>
-              <FormLabel>您從何處知道我們</FormLabel>
-              <CheckboxGroup>
-                <Stack {...checkboxStackProps}>
-                  <Checkbox value="website">官方網站</Checkbox>
-                  <Checkbox value="corporate">Facebook</Checkbox>
-                  <Checkbox value="instagram">Instagram</Checkbox>
-                  <Checkbox value="youtube">YouTube</Checkbox>
-                  <Checkbox value="friend">朋友推薦</Checkbox>
-                  <Checkbox value="industry">業內介紹</Checkbox>
-                  <Checkbox value="other">其他</Checkbox>
-                </Stack>
-              </CheckboxGroup>
-            </FormControl>
-          </Flex>
+          <FormRow>
+            <RadioField
+              label="您的預算為何"
+              radioList={[
+                { value: "0", label: "5萬以下" },
+                { value: "5", label: "5~19萬" },
+                { value: "20", label: "20~49萬" },
+                { value: "50", label: "50萬" },
+              ]}
+            />
+          </FormRow>
+          <FormRow>
+            <RadioField
+              label="有無希望的結案時間"
+              radioList={[
+                { value: "Y", label: "有" },
+                { value: "N", label: "沒有" },
+                { value: "ASAP", label: "沒有，但希望儘快" },
+              ]}
+            />
+          </FormRow>
+          <FormRow>
+            <CheckboxField
+              label="您從何處知道我們"
+              checkboxList={[
+                { value: "website", label: "官方網站" },
+                { value: "corporate", label: "Facebook" },
+                { value: "instagram", label: "Instagram" },
+                { value: "youtube", label: "YouTube" },
+                { value: "friend", label: "朋友推薦" },
+                { value: "industry", label: "業內介紹" },
+                { value: "other", label: "其他" },
+              ]}
+            />
+          </FormRow>
           <Divider mb="1rem" />
-          <Flex w="100%" alignItems="center" columnGap="1rem" {...flexFormRowProps}>
+          <FormRow alignItems="center">
             <Button>提交</Button>
             <Text>或直接與我們聯繫 - <Link href="mailto://romiadstudio@gmail.com">romiadstudio@gmail.com</Link></Text>
-          </Flex>
-        </Flex>
+          </FormRow>
+        </Form>
       </Flex>
       <Footer />
     </main>

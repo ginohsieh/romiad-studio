@@ -18,7 +18,7 @@ export default function LightBox({ onClose = () => {}, children }) {
       px="2rem"
       py="2rem"
     >
-      <IconButton position="absolute" top="2rem" right="2rem" variant="ghost" colorScheme="white" onClick={onClose} icon={(<IoIosClose size="4rem" color="white" />)} />
+      <IconButton zIndex="9999" position="absolute" top="2rem" right="2rem" variant="ghost" colorScheme="white" onClick={onClose} icon={(<IoIosClose size="4rem" color="white" />)} />
       {children}
     </Flex>
   )
