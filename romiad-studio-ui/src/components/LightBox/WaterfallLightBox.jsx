@@ -1,9 +1,11 @@
 'use client';
-
-import Macy from 'macy';
+import dynamic from 'next/dynamic';
 import LightBox from './LightBox';
 import { useEffect } from 'react';
 import { Box, Flex, Image } from '@chakra-ui/react';
+
+
+const Macy = dynamic(() => import("macy"), { ssr: false })
 
 export default function WaterfallLightbox({items = [], onClose = () => {}}) {
   useEffect(() => {
