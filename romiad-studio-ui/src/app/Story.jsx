@@ -26,6 +26,7 @@ export default function Story() {
     {
       bg: "./videos/story_creative.mp4",
       title: "創意",
+      enTitle: "Creative",
       onClick: () => {
         setLightboxType('story_creative')
         openPortal()
@@ -34,6 +35,7 @@ export default function Story() {
     {
       bg: "./videos/story_concept.mp4",
       title: "概念",
+      enTitle: "Concept",
       onClick: () => {
         setLightboxType('story_concept')
         openPortal()
@@ -42,6 +44,7 @@ export default function Story() {
     {
       bg: "./videos/story_unique.mp4",
       title: "獨有",
+      enTitle: "Unique",
       onClick: () => {
         setLightboxType('story_unique')
         openPortal()

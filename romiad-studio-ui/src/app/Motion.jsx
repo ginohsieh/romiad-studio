@@ -17,6 +17,7 @@ export default function Motion() {
     {
       bg: "./videos/city_marketing.mp4",
       title: "城市行銷",
+      enTitle: "City Marketing",
       onClick: () => {
         setLightboxType('city_marketing')
         openPortal()
@@ -25,6 +26,7 @@ export default function Motion() {
     {
       bg: "./videos/commercial.mp4",
       title: "商業廣告",
+      enTitle: "Commercial",
       onClick: () => {
         setLightboxType('commercial')
         openPortal()
@@ -33,6 +35,7 @@ export default function Motion() {
     {
       bg: "./videos/corporate.mp4",
       title: "品牌形象",
+      enTitle: "Corporate",
       onClick: () => {
         setLightboxType('corporate')
         openPortal()
@@ -41,6 +44,7 @@ export default function Motion() {
     {
       bg: "./videos/crowdfunding.mp4",
       title: "募資影像",
+      enTitle: "Crowdfunding",
       onClick: () => {
         setLightboxType('crowdfunding')
         openPortal()
@@ -49,6 +53,7 @@ export default function Motion() {
     {
       bg: "./videos/event.mp4",
       title: "活動紀錄",
+      enTitle: "Events",
       onClick: () => {
         setLightboxType('event')
         openPortal()
@@ -57,6 +62,7 @@ export default function Motion() {
     {
       bg: "./videos/interview.mp4",
       title: "訪談紀錄",
+      enTitle: "Interview",
       onClick: () => {
         setLightboxType('interview')
         openPortal()

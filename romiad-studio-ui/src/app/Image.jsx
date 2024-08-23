@@ -29,8 +29,27 @@ export default function Image() {
 
   const items = useConst(() => [
     {
+      bg: "./imgs/images/portrait/cover.jpg",
+      title: "人像攝影",
+      enTitle: "Portrait",
+      onClick: () => {
+        setLightboxType('portrait')
+        openPortal()
+      },
+    },
+    {
+      bg: "./imgs/images/event/cover.jpg",
+      title: "活動紀錄",
+      enTitle: "Event",
+      onClick: () => {
+        setLightboxType('event')
+        openPortal()
+      },
+    },
+    {
       bg: "./imgs/images/product/cover.jpg",
       title: "產品攝影",
+      enTitle: "Product",
       onClick: () => {
         setLightboxType('product')
         openPortal()
@@ -39,30 +58,16 @@ export default function Image() {
     {
       bg: "./imgs/images/luxury/cover.jpg",
       title: "精品攝影",
+      enTitle: "Luxury",
       onClick: () => {
         setLightboxType('luxury')
         openPortal()
       },
     },
     {
-      bg: "./imgs/images/event/cover.jpg",
-      title: "活動紀錄",
-      onClick: () => {
-        setLightboxType('event')
-        openPortal()
-      },
-    },
-    {
-      bg: "./imgs/images/portrait/cover.jpg",
-      title: "人像攝影",
-      onClick: () => {
-        setLightboxType('portrait')
-        openPortal()
-      },
-    },
-    {
       bg: "./imgs/images/food/cover.jpg",
       title: "食品攝影",
+      enTitle: "Food",
       onClick: () => {
         setLightboxType('food')
         openPortal()
@@ -71,6 +76,7 @@ export default function Image() {
     {
       bg: "./imgs/images/streetsnap/cover.jpg",
       title: "街頭拍攝",
+      enTitle: "Streetsnap",
       onClick: () => {
         setLightboxType('streetsnap')
         openPortal()
@@ -79,8 +85,8 @@ export default function Image() {
     {
       bg: "./imgs/images/landscape/cover.jpg",
       title: "風景攝影",
+      enTitle: "Landscape",
       onClick: () => {
-        console.log('test')
         setLightboxType('landscape')
         openPortal()
       },
@@ -94,10 +100,9 @@ export default function Image() {
     },
     alignItems: "center",
     w: "100%",
-    maxW: "1024px",
-    h: "15vh",
-    maxH: "24rem",
-    px: "2rem",
+    maxW: "1280px",
+    px: "4rem",
+    py: "4rem",
   }
 
   const titleBlockHeadingProps = {
@@ -116,7 +121,7 @@ export default function Image() {
   }
 
   return (
-    <Flex alignItems="center" direction="column" h="100vh" maxH="1080px" pt="4rem">
+    <Flex alignItems="center" justifyContent="space-between" direction="column" h="100vh" maxH="900px" pt="4rem">
       {isOpen &&
         <Portal>
           <WaterfallLightbox items={images} onClose={closePortal} />
@@ -162,9 +167,13 @@ export default function Image() {
                       h="100%"
                       w="100%"
                       fontSize="1rem"
-                      justifyContent="center"
+                      justifyContent="end"
                       alignItems="center"
+                      direction="column"
+                      rowGap="3px"
+                      py="25%"
                     >
+                      <Text>{item.enTitle}</Text>
                       <Text>{item.title}</Text>
                     </Flex>
                   </Flex>
@@ -175,7 +184,7 @@ export default function Image() {
         </Flex>
       )}
       {!displayInCarousel && (
-        <Flex flex={1} direction="row" w="100%" py="1rem">
+        <Flex flex={1} direction="row" w="100%">
           {items.map((item) => (
             <Flex
               flex={1}
@@ -193,17 +202,20 @@ export default function Image() {
               <Flex
                 h="100%"
                 w="100%"
-                fontSize="1rem"
+                fontSize="1.25rem"
                 opacity={0}
                 _hover={{
                   opacity: 1,
                   bgColor: "blackAlpha.800"
                 }}
                 transition="opacity 0.2s"
-                justifyContent="center"
+                justifyContent="end"
                 alignItems="center"
-
+                py="25%"
+                direction="column"
+                rowGap="3px"
               >
+                <Text>{item.enTitle}</Text>
                 <Text>{item.title}</Text>
               </Flex>
             </Flex>

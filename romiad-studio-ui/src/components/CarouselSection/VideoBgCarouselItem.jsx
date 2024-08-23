@@ -1,9 +1,9 @@
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Flex, Text } from '@chakra-ui/react';
 import CarouselItem from '../Carousel/CarouselItem';
 import { useRef } from 'react';
 import useOnScreen from '@/hooks/useOnScreen';
 
-export default function VideoBgCarouselItem({ bg, title, ...props }) {
+export default function VideoBgCarouselItem({ bg, title, enTitle, ...props }) {
   const ref = useRef(null);
   const isVisible = useOnScreen(ref);
   return (<CarouselItem
@@ -31,16 +31,19 @@ export default function VideoBgCarouselItem({ bg, title, ...props }) {
       top="0"
       left="0"
       px="1rem"
-      py="2rem"
+      py="0rem"
     >
       <source data-src={bg} type="video/mp4" />
     </Box>
     <Flex
       h="100%"
       w="100%"
-      alignItems="flex-end"
+      justifyContent="flex-end"
+      direction="column"
+      fontSize="1.25rem"
     >
-      {title}
+      <Text>{enTitle}</Text>
+      <Text>{title}</Text>
     </Flex>
   </CarouselItem>
   )
