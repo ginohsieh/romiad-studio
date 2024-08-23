@@ -102,7 +102,10 @@ export default function Image() {
     w: "100%",
     maxW: "1280px",
     px: "4rem",
-    py: "4rem",
+    py: {
+      base: "2rem",
+      lg: "4rem"
+    }
   }
 
   const titleBlockHeadingProps = {
@@ -121,7 +124,14 @@ export default function Image() {
   }
 
   return (
-    <Flex alignItems="center" justifyContent="space-between" direction="column" h="100vh" maxH="900px" pt="4rem">
+    <Flex
+      alignItems="center"
+      justifyContent="space-between"
+      direction="column"
+      h="100vh"
+      maxH="900px"
+      pt="4rem"
+    >
       {isOpen &&
         <Portal>
           <WaterfallLightbox items={images} onClose={closePortal} />

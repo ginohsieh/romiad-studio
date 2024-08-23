@@ -15,8 +15,12 @@ export default function CarouselSection({ items = [], title, subtitle, reverse =
     xl: alwaysAutoPlay,
   })
   const containerProps = {
-    py: {
-      base: '8rem',
+    pt: {
+      base: '6rem',
+      lg: '0',
+    },
+    pb: {
+      base: '2rem',
       lg: '0',
     },
     [reverse ? 'pr' : 'pl']: {
@@ -25,7 +29,7 @@ export default function CarouselSection({ items = [], title, subtitle, reverse =
     },
     w: {
       base: '100vw',
-      xl: useOverflowLayout ? '115vw' : '100vw',
+      xl: useOverflowLayout ? '125vw' : '100vw',
     },
     h: '100vh',
     maxH: '100%',
@@ -86,9 +90,17 @@ export default function CarouselSection({ items = [], title, subtitle, reverse =
     flex: '1',
     maxW: useOverflowLayout ? '1920px' : '1680px',
     overflow: 'hidden',
+    pt: {
+      base: 'auto',
+      lg: '5rem'
+    },
+    pb: {
+      base: 'auto',
+      lg: '2rem'
+    },
     h: {
       base: 'auto',
-      lg: '80%'
+      lg: '100%'
     },
     maxH: '800px',
     w: {
