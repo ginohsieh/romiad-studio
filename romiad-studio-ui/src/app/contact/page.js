@@ -62,7 +62,7 @@ export default function Home() {
               name="url"
             />
           </FormRow>
-          <Divider mb="1rem" />
+          <Divider my="1rem" />
           <FormRow>
             <CheckboxField
               label="欲拍攝影像類型"
@@ -81,23 +81,11 @@ export default function Home() {
             <TextareaField label="敘述您的需求（200字內精簡敘述即可）" name="description" />
           </FormRow>
           <FormRow>
-            <InputField label="您希望何時開始" type="date" name="start_date" />
-          </FormRow>
-          <Divider mb="1rem" />
-          <FormRow>
-            <RadioField
-              label="您的預算為何"
-              radioList={[
-                { value: "0", label: "5萬以下" },
-                { value: "5", label: "5~19萬" },
-                { value: "20", label: "20~49萬" },
-                { value: "50", label: "50萬" },
-              ]}
-            />
+            <InputField label="希望何時開始製作" type="date" name="start_date" />
           </FormRow>
           <FormRow>
             <RadioField
-              label="有無希望的結案時間"
+              label="希望的結案時間"
               radioList={[
                 { value: "Y", label: "有" },
                 { value: "N", label: "沒有" },
@@ -106,8 +94,21 @@ export default function Home() {
             />
           </FormRow>
           <FormRow>
+            <RadioField
+              label="您的預算為何"
+              radioList={[
+                { value: "5", label: "5萬" },
+                { value: "8", label: "8~15萬" },
+                { value: "20", label: "20~45萬" },
+                { value: "50", label: "50~80萬" },
+                { value: "100", label: ">100萬"}
+              ]}
+            />
+          </FormRow>
+          <Divider mb="1rem" />
+          <FormRow>
             <CheckboxField
-              label="您從何處知道我們"
+              label="您是從何處知道我們"
               checkboxList={[
                 { value: "website", label: "官方網站" },
                 { value: "corporate", label: "Facebook" },
@@ -119,7 +120,7 @@ export default function Home() {
               ]}
             />
           </FormRow>
-          <Divider mb="1rem" />
+          <Divider my="1rem" />
           <FormRow alignItems="center">
             <Button>提交</Button>
             <Text>或直接與我們聯繫 - <Link href="mailto://romiadstudio@gmail.com">romiadstudio@gmail.com</Link></Text>

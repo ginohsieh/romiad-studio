@@ -4,14 +4,16 @@ import Footer from '@/components/Footer/Footer';
 import { Button, Flex, Heading, Image, Spacer, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 import ProcessSection from './components/ProcessSection';
-import AwardSection from './components/ProcessSection/AwardSection';
+import AwardSection from './components/AwardSection';
+import PartnerSection from './components/PartnerSection';
+import AboutSection from './components/AboutSection';
 
 export const metadata = {
   title: _metadata.title,
   keywords: _metadata.keywords,
 }
 
-export default function Home() {
+export default function Us() {
   const aboutUsProps = {
     direction: {
       base: 'column',
@@ -34,7 +36,7 @@ export default function Home() {
     <main>
       <Navigation bgColor="black" />
       <Flex width="100%" pt="120px" px="4rem" direction="column" alignItems="center">
-        <Flex
+        {/* <Flex
           width="100%"
           maxWidth="1680px"
           {...aboutUsProps}
@@ -55,9 +57,11 @@ export default function Home() {
               alt="about_us"
             />
           </Flex>
-        </Flex>
+        </Flex> */}
+        <AboutSection />
         <ProcessSection />
         <AwardSection />
+        <PartnerSection />
       </Flex>
       <Footer />
     </main>

@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react';
 
-export default function useOnScreen(ref, rootMargin = '0px') {
+export default function useOnScreen(ref, { rootMargin = '0px', once = false } = {}) {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
+    if (once && isVisible) {
+      return () => {}
+    }
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
@@ -21,6 +24,6 @@ export default function useOnScreen(ref, rootMargin = '0px') {
     return () => {
       observer.unobserve(currentElement);
     };
-  }, []);
+  }, [isVisible]);
   return isVisible;
 }
