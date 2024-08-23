@@ -129,7 +129,10 @@ export default function Image() {
       justifyContent="space-between"
       direction="column"
       h="100vh"
-      maxH="900px"
+      maxH={{
+        base: "100vh",
+        lg: "900px",
+      }}
       pt="4rem"
     >
       {isOpen &&
