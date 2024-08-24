@@ -1,10 +1,17 @@
 'use client';
 
 import { Flex, IconButton } from '@chakra-ui/react';
+import { useEffect } from 'react';
 import { IoIosClose } from "react-icons/io";
 
 
 export default function LightBox({ onClose = () => {}, children }) {
+  useEffect(() => {
+    window.fullpage_api.disabled = true
+    return () => {
+      window.fullpage_api.disabled = false
+    }
+  }, [])
   return (
     <Flex
       zIndex="99999"

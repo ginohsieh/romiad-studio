@@ -19,6 +19,9 @@ export default function Fullpage() {
   })
   return (
     <ReactFullpage
+      onLeave={() => {
+        return !(window.fullpage_api?.disabled)
+      }}
       render={({ state, fullpageApi }) => (
         <>
           <Portal><Navigation moveTo={fullpageApi?.moveTo} /></Portal>
