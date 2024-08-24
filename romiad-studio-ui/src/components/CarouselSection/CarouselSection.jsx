@@ -3,9 +3,11 @@
 import { Box, Center, Flex, Heading, Stack, Text, useBreakpointValue } from '@chakra-ui/react';
 import Carousel from '../Carousel';
 import VideoBgCarouselItem from './VideoBgCarouselItem';
+import { useRef } from 'react';
 
 
-export default function CarouselSection({ items = [], title, subtitle, reverse = false, useOverflowLayout = true, alwaysAutoPlay = true}) {
+export default function CarouselSection({ items = [], title, subtitle, reverse = false, useOverflowLayout = true, alwaysAutoPlay = true }) {
+  const draggingRef = useRef(null);
   const rtl = useBreakpointValue({
     base: false,
     lg: reverse ? true : false
@@ -129,11 +131,22 @@ export default function CarouselSection({ items = [], title, subtitle, reverse =
             itemClass="h100"
             sliderClass="h100"
             ssr={true}
+            afterChange={() => {
+              draggingRef.current = false;
+            }}
+            beforeChange={() => {
+              draggingRef.current = true;
+            }}
           >
             {items.map(item => (
               <VideoBgCarouselItem
                 key={`carousel-${title}`}
                 {...item}
+                onClick={(e) => {
+                  if (!draggingRef?.current) {
+                    item.onClick(e)
+                  }
+                }}
               />)
             )}
           </Carousel>
