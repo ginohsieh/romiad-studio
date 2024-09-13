@@ -9,7 +9,6 @@ import Image from './Image';
 import SectionSlider, { Section } from '@/components/SectionSlider';
 import Footer from '@/components/Footer/Footer';
 import Navigation from '@/components/Navigation';
-import { useRouter } from 'next/navigation';
 
 const anchors = ['main', 'motion', 'story', 'image', 'footer']
 

@@ -34,12 +34,12 @@ export default function Navigation({ moveTo = () => {}, ...restProps }) {
         display={{ base: 'none', md: 'flex' }}
         alignItems="center"
       >
-        <a href="/#main" onClick={moveToMain}><Logo /></a>
+        <Link href="/#main" onClick={moveToMain}><Logo /></Link>
         <Spacer w="2rem" />
         <List display="flex" flexDirection="row" gap="1rem">
           {navigation.map((item, index) => (
             <ListItem key={`nav-item-${index}`}>
-              <a
+              <Link
                 href={item.href}
                 onClick={() => {
                   if (item.href.includes('#')) {
@@ -49,7 +49,7 @@ export default function Navigation({ moveTo = () => {}, ...restProps }) {
                 }}
               >
                 {item.display_name}
-              </a>
+              </Link>
             </ListItem>
           ))}
         </List>
