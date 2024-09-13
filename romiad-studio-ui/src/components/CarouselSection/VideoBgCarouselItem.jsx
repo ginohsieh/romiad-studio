@@ -40,7 +40,7 @@ export default function VideoBgCarouselItem({ bg, title, enTitle, ...props }) {
       w="100%"
       justifyContent="flex-end"
       direction="column"
-      fontSize="1.25rem"
+      fontSize="1.75rem"
     >
       <Text>{enTitle}</Text>
       <Text>{title}</Text>

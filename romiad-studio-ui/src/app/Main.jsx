@@ -1,5 +1,6 @@
 import { Box, Fade, Flex, Text } from '@chakra-ui/react';
 import metadata from "@/config/metadata";
+import GlitchText from '@/components/GlitchText';
 
 export default function Main() {
   const keywordLines = [
@@ -28,18 +29,17 @@ export default function Main() {
       </Box>
       <Flex w="100%" h="100%" justifyContent="center" direction="column" rowGap="1rem" bgColor="blackAlpha.300">
         <Fade in transition={{ enter: { delay: 0.5, duration: 1 } }}>
-          <Text
+          <GlitchText
             as="h1"
             align="center"
             textStyle="website-title"
           >
             {metadata.title}
-          </Text>
-
+          </GlitchText>
         </Fade>
         <Fade in transition={{ enter: { delay: 0.5, duration: 1 } }}>
           <Flex direction="column" justifyContent="center" rowGap="0.25rem">
-            {keywordLines.map((line, index) => (<Text align="center" key={`keyword-line-${index}`}>{line}</Text>))}
+            {keywordLines.map((line, index) => (<GlitchText align="center" key={`keyword-line-${index}`}>{line}</GlitchText>))}
           </Flex>
         </Fade>
       </Flex>

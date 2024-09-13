@@ -13,6 +13,10 @@ const WaterfallLightbox = dynamic(() => import('@/components/LightBox/WaterfallL
 const responsive = {
   base: {
     breakpoint: { max: 65536, min: 0 },
+    items: 1,
+  },
+  lg: {
+    breakpoint: { max: 1024, min: 768 },
     items: 3,
   },
 }
@@ -130,8 +134,8 @@ export default function Image() {
       direction="column"
       h="100vh"
       maxH={{
-        base: "100vh",
-        lg: "900px",
+        base: "100%",
+        lg: "1080px",
       }}
       pt="4rem"
     >
@@ -179,7 +183,7 @@ export default function Image() {
                     <Flex
                       h="100%"
                       w="100%"
-                      fontSize="1rem"
+                      fontSize="1.25rem"
                       justifyContent="end"
                       alignItems="center"
                       direction="column"
@@ -215,7 +219,7 @@ export default function Image() {
               <Flex
                 h="100%"
                 w="100%"
-                fontSize="1.25rem"
+                fontSize="1.5rem"
                 opacity={0}
                 _hover={{
                   opacity: 1,
