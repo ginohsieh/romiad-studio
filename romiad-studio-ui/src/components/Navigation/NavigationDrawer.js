@@ -1,6 +1,5 @@
 import { Drawer, DrawerBody, DrawerContent, DrawerOverlay, Flex, List, ListItem } from '@chakra-ui/react';
 import Link from 'next/link';
-import { RxHamburgerMenu } from 'react-icons/rx';
 
 export default function NavigationDrawer({
   navigation = [],
@@ -24,18 +23,19 @@ export default function NavigationDrawer({
               <List display="flex" flexDirection="column" gap="1rem">
                 {navigation.map((item, index) => (
                   <ListItem key={`nav-item-${index}`}>
-                    <Link
+                    <a
                       href={item.href}
                       onClick={() => {
                         if (item.href.includes('#')) {
                           const anchor = item.href.slice(item.href.indexOf('#') + 1)
+                          console.log(anchor)
                           moveTo(anchor)
                           onClose()
                         }
                       }}
                     >
                       {item.display_name}
-                    </Link>
+                    </a>
                   </ListItem>
                 ))}
               </List>
