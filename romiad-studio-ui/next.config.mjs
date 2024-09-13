@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/romiad-studio/',
+  basePath: '/romiad-studio',
 };
 
 export default nextConfig;
