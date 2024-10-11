@@ -1,5 +1,5 @@
 import path from 'path';
-import Joi from 'Joi';
+import Joi from 'joi';
 import { Router } from 'express';
 import pug from 'pug';
 import Mailer from '@/utils/mailer';
