@@ -9,25 +9,27 @@ export default function PartnerSection() {
   const partnersRef = useRef()
   const isOnScreen = useOnScreen(partnersRef, { once: true })
   const partners = [
-    { src: "./imgs/aboutus/partners/ami.png" },
-    { src: "./imgs/aboutus/partners/bic.png" },
-    { src: "./imgs/aboutus/partners/hlcounty.png" },
-    { src: "./imgs/aboutus/partners/piodata.png" },
-    { src: "./imgs/aboutus/partners/tycity.png" },
-    { src: "./imgs/aboutus/partners/imin.png" },
-    { src: "./imgs/aboutus/partners/ponwaa.png" },
-    { src: "./imgs/aboutus/partners/unagi_yondaime_kikukawa.png" },
-    { src: "./imgs/aboutus/partners/bnpp.png" },
-    { src: "./imgs/aboutus/partners/lolinya.png" },
-    { src: "./imgs/aboutus/partners/sangean.png" },
-    { src: "./imgs/aboutus/partners/wagon_image.png" },
-    { src: "./imgs/aboutus/partners/cofit.png" },
-    { src: "./imgs/aboutus/partners/msmingshine.png" },
-    { src: "./imgs/aboutus/partners/ss.png" },
-    { src: "./imgs/aboutus/partners/weblisher.png" },
-    { src: "./imgs/aboutus/partners/heben.png" },
-    { src: "./imgs/aboutus/partners/mxm.png" },
-    { src: "./imgs/aboutus/partners/tspef.png" }
+    { src: "./imgs/aboutus/partners/01.png" },
+    { src: "./imgs/aboutus/partners/02.png" },
+    { src: "./imgs/aboutus/partners/03.png" },
+    { src: "./imgs/aboutus/partners/04.png" },
+    { src: "./imgs/aboutus/partners/05.png" },
+    { src: "./imgs/aboutus/partners/06.png" },
+    { src: "./imgs/aboutus/partners/07.png" },
+    { src: "./imgs/aboutus/partners/08.png" },
+    { src: "./imgs/aboutus/partners/09.png" },
+    { src: "./imgs/aboutus/partners/10.png" },
+    { src: "./imgs/aboutus/partners/11.png" },
+    { src: "./imgs/aboutus/partners/12.png" },
+    { src: "./imgs/aboutus/partners/13.png" },
+    { src: "./imgs/aboutus/partners/14.png" },
+    { src: "./imgs/aboutus/partners/15.png" },
+    { src: "./imgs/aboutus/partners/16.png" },
+    { src: "./imgs/aboutus/partners/17.png" },
+    { src: "./imgs/aboutus/partners/18.png" },
+    { src: "./imgs/aboutus/partners/19.png" },
+    { src: "./imgs/aboutus/partners/20.png" },
+
   ]
 
   return (
@@ -35,7 +37,7 @@ export default function PartnerSection() {
       <Flex>
         <Heading as="h2" size="lg">Partners 合作夥伴</Heading>
       </Flex>
-      <Flex columnGap="1rem" maxW="768px" flexWrap="wrap" justifyContent="center" ref={partnersRef}>
+      <Flex columnGap="4rem" rowGap="2rem" maxW="768px" flexWrap="wrap" justifyContent="center" ref={partnersRef}>
         {partners.map(({ src }, index) => (
           <Flex key={src} width="128px">
             <SlideFade in={isOnScreen} delay={{ enter: index * 0.15 }} offsetX="-128px">

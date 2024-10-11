@@ -26,7 +26,7 @@ export default function AwardSection() {
       <Flex>
         <Heading as="h2" size="lg">Awards 得獎紀錄</Heading>
       </Flex>
-      <Flex columnGap="1rem" ref={awardRef}>
+      <Flex columnGap="1rem" justifyContent="center" flexWrap="wrap" ref={awardRef}>
         {awards.map(({ title }, index) => (
           <Flex width="240px" key={title} justifyContent="center">
             <SlideFade in={isOnScreen} delay={{ enter: index * 0.2 }} offsetY="60px">

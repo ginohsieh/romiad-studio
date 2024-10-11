@@ -15,7 +15,7 @@ export default function ProcessSection() {
       <Flex>
         <Heading as="h2" size="lg">Our Process 製作流程</Heading>
       </Flex>
-      <Flex columnGap="6rem">
+      <Flex columnGap="6rem" justifyContent="center" flexWrap="wrap">
         {
           process.map(({ title, iconSrc }) => (
               <Flex key={title} direction="column" py="48px" rowGap="1.5rem" alignItems="center" justifyContent="space-between">
