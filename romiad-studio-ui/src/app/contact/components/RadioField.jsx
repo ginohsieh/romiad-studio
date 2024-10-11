@@ -4,7 +4,9 @@ import { RadioGroup, FormControl, FormLabel, Radio, Stack } from '@chakra-ui/rea
 
 export default function RadioField({
   label,
-  radioList=[]
+  radioList=[],
+  name,
+  required,
 } = {}) {
 
   const radiogroupStackProps = {
@@ -25,7 +27,7 @@ export default function RadioField({
       <Stack {...radiogroupStackProps}>
         {
           radioList.map(({value, label, ...restProps}) => (
-            <Radio key={value} value={value} {...restProps}>{label}</Radio>
+            <Radio key={value} name={name} isRequired={required} value={value} {...restProps}>{label}</Radio>
           ))
         }
       </Stack>

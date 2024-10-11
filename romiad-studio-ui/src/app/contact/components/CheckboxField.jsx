@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Checkbox, CheckboxGroup, FormControl, FormLabel, Stack } from '@chakra-ui/react';
+import { Button, Checkbox, FormControl, FormLabel, Stack } from '@chakra-ui/react';
 import { useCallback, useState } from 'react';
 
 
@@ -15,14 +15,15 @@ function CheckboxButton({ children, value, ...checkboxProps }) {
       onClick={onClick}
     >
       {children}
-      <Checkbox checked={checked} display="none" value={value} {...checkboxProps} />
+      <Checkbox opacity="0" position="absolute" value={value} {...checkboxProps} isChecked={checked} />
     </Button>
   )
 }
 
 export default function CheckboxField({
   label,
-  checkboxList=[]
+  checkboxList=[],
+  name,
 } = {}) {
 
   const checkboxStackProps = {
@@ -35,19 +36,16 @@ export default function CheckboxField({
       md: '1rem',
     }
   }
-
   return (
     <FormControl>
     <FormLabel>{label}</FormLabel>
-    <CheckboxGroup>
-      <Stack {...checkboxStackProps}>
-        {
-          checkboxList.map(({value, label, ...restProps}) => (
-            <CheckboxButton key={value} value={value} checkboxProps={restProps}>{label}</CheckboxButton>
-          ))
-        }
-      </Stack>
-    </CheckboxGroup>
+    <Stack {...checkboxStackProps}>
+      {
+        checkboxList.map(({value, label, ...restProps}) => (
+          <CheckboxButton key={value} name={name} value={value} checkboxProps={restProps}>{label}</CheckboxButton>
+        ))
+      }
+    </Stack>
   </FormControl>
   )
 }
