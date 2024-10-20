@@ -5,7 +5,6 @@ export default function Form(props) {
     <Flex
       as="form"
       w="100%"
-      minW="600px"
       maxW="1280px"
       justifyContent="center"
       alignItems="center"
