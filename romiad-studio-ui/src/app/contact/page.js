@@ -1,5 +1,5 @@
 import _metadata from "@/config/metadata";
-import { Flex, Heading } from '@chakra-ui/react';
+import { Flex, Heading, Portal } from '@chakra-ui/react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer/Footer';
 import ContactForm from './components/ContactForm';
@@ -16,7 +16,7 @@ export default function Contact() {
 
   return (
     <main>
-      <Navigation bgColor="black" />
+      <Flex bgColor="black"><Navigation /></Flex>
       <Flex width="100%" justifyContent="center" pt="120px" direction="column" alignItems="center">
         <Flex py="4rem">
           <Heading as="h2" size="lg">Contact us 聯絡我們</Heading>

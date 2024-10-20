@@ -34,7 +34,7 @@ export default function Us() {
 
   return (
     <main>
-      <Navigation bgColor="black" />
+      <Flex bgColor="black"><Navigation /></Flex>
       <Flex width="100%" pt="120px" px="4rem" direction="column" alignItems="center">
         {/* <Flex
           width="100%"
