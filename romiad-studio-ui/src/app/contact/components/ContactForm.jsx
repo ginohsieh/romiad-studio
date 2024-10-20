@@ -50,7 +50,7 @@ export default function ContactForm() {
   }
   return (
     <>
-      <SpinnerOverlay isOpen={false} />
+      <SpinnerOverlay isOpen={isLoading} />
       <StandardModal title="提交成功" isOpen={isSuccessfulModalOpen} onClose={() => setIsSuccessfulModalOpen(false)}>
         <Text>感謝您的聯絡，我們將盡快與您聯繫！</Text>
       </StandardModal>
