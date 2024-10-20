@@ -3,7 +3,8 @@
     "port": 587,
     "secure": false,
     "auth": {
-        "user": "ginohsieh0820@gmail.com",
+        "user": "romiad.service@gmail.com",
         "pass": ""
-    }
+    },
+    "receiver": "romiad.service@gmail.com"
 }

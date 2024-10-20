@@ -4,6 +4,7 @@ import { Router } from 'express';
 import pug from 'pug';
 import Mailer from '@/utils/mailer';
 import logger from '@/utils/logger';
+import smtpCnf from '@/configs/smtp.json';
 
 const contactRouter = Router();
 
@@ -78,7 +79,6 @@ function schemaValidator(req, res, next) {
     next();
   }
   const validateResult = schema.validate(req.body);
-  console.log(validateResult);
   if (validateResult.error) {
     return res.status(400).send();
   }
@@ -94,7 +94,7 @@ contactRouter.post("/", async (req, res) => {
   const compiledFunction = pug.compileFile(path.join(__dirname, 'mail.pug'));
   const info = await mailer.sendMail({
     from: `"${req.body.name}" <${req.body.email}>`,
-    to: 'gino7777@gmail.com',
+    to: smtpCnf.receiver,
     subject: `Inquiry from ${req.body.name}`,
     text: `Inquiry from ${req.body.name}`,
     html: compiledFunction({
