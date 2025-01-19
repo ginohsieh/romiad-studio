@@ -99,7 +99,9 @@ export default function ContactForm() {
           <TextareaField label="敘述您的需求（200字內精簡敘述即可）" name="description" required />
         </FormRow>
         <FormRow>
-          <InputField label="希望的結案時間" type="date" name="end_date" required />
+          <InputField label="希望的結案時間" type="date" name="end_date" required style={{
+            "color-scheme": "dark"
+          }} />
         </FormRow>
         <FormRow>
           <RadioField
