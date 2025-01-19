@@ -57,8 +57,7 @@ const schemas = {
         'other'
       )).required(),
       description: Joi.string().max(1024).allow(null, ''),
-      start_date: Joi.string().isoDate().required(),
-      end_date_preference: Joi.string().valid('Y', 'N', 'ASAP').required(),
+      end_date: Joi.string().isoDate().required(),
       budget: Joi.string().valid("5", "8", "20", "50", "100").required(),
       source: Joi.array().items(Joi.string().valid(
         'website',
