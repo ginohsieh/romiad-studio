@@ -35,7 +35,7 @@ export default function PartnerSection() {
   return (
     <Flex alignItems="center" direction="column" py="8rem" rowGap="2rem">
       <Flex>
-        <Heading as="h2" size="lg">Partners 合作夥伴</Heading>
+        <Heading as="h2" size="2xl">Partners 合作夥伴</Heading>
       </Flex>
       <Flex columnGap="4rem" rowGap="2rem" maxW="768px" flexWrap="wrap" justifyContent="center" ref={partnersRef}>
         {partners.map(({ src }, index) => (

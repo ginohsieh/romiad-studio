@@ -17,7 +17,7 @@ export default function AboutSection() {
   }
   const aboutUsTitleProps = {
     as: 'h2',
-    size: 'lg',
+    size: '2xl',
     textAlign: {
       base: 'center',
       xl: 'left',
@@ -35,7 +35,7 @@ export default function AboutSection() {
         <Heading {...aboutUsTitleProps}>About us 關於盧米</Heading>
         <Flex direction="column" justifyContent="center" rowGap="1rem">
           <SlideFade in={isOnScreen} transition={{ enter: { delay: 0, duration: 0.5 } }}  offsetX="-64px"><Text>「影像的品質，我們嚴謹挑剔；影像的價值，我們律已專一。」</Text></SlideFade>
-          <SlideFade in={isOnScreen} transition={{ enter: { delay: 0.7, duration: 0.5 } }} offsetX="-64px"><Text>盧米，是原住民詞語Romiad的中文轉譯，有「日z子；天」的意思，但沿用到「盧米工作室」一名稱上，則衍伸出「挑戰、創新」的涵義。</Text></SlideFade>
+          <SlideFade in={isOnScreen} transition={{ enter: { delay: 0.7, duration: 0.5 } }} offsetX="-64px"><Text>盧米，是原住民詞語Romiad的中文轉譯，有「日子；天」的意思，但沿用到「盧米工作室」一名稱上，則衍伸出「挑戰、創新」的涵義。</Text></SlideFade>
           <SlideFade in={isOnScreen} transition={{ enter: { delay: 1.4, duration: 0.5 } }} offsetX="-64px"><Text>透過挑戰視聽感官的影像創作，融合在地與世界潮流影像的特色，在影像領域中創予獨殊之風格，從而建立一套，能以不同角度觀看、敘述影像的方式，使大眾能體會並培養出看待影像更多元的觀點。</Text></SlideFade>
         </Flex>
       </Flex>

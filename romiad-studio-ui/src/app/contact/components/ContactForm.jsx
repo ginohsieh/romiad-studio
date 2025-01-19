@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Button, Divider, Text } from '@chakra-ui/react';
+import { Button, Checkbox, Divider, Text } from '@chakra-ui/react';
 import Form from './Form';
 import FormRow from './FormRow';
 import InputField from './InputField';
@@ -99,19 +99,7 @@ export default function ContactForm() {
           <TextareaField label="敘述您的需求（200字內精簡敘述即可）" name="description" required />
         </FormRow>
         <FormRow>
-          <InputField label="希望何時開始製作" type="date" name="start_date" required />
-        </FormRow>
-        <FormRow>
-          <RadioField
-            label="希望的結案時間"
-            name="end_date_preference"
-            radioList={[
-              { value: "Y", label: "有" },
-              { value: "N", label: "沒有" },
-              { value: "ASAP", label: "沒有，但希望儘快" },
-            ]}
-            required
-          />
+          <InputField label="希望的結案時間" type="date" name="end_date" required />
         </FormRow>
         <FormRow>
           <RadioField

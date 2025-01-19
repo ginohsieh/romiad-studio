@@ -24,7 +24,7 @@ export default function AwardSection() {
   return (
     <Flex alignItems="center" direction="column" py="8rem" rowGap="2rem">
       <Flex>
-        <Heading as="h2" size="lg">Awards 得獎紀錄</Heading>
+        <Heading as="h2" size="2xl">Awards 得獎紀錄</Heading>
       </Flex>
       <Flex columnGap="1rem" justifyContent="center" flexWrap="wrap" ref={awardRef}>
         {awards.map(({ title }, index) => (
