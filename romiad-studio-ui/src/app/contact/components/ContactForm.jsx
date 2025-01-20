@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Button, Checkbox, Divider, Text } from '@chakra-ui/react';
+import { Button, Divider, Text } from '@chakra-ui/react';
 import Form from './Form';
 import FormRow from './FormRow';
 import InputField from './InputField';
