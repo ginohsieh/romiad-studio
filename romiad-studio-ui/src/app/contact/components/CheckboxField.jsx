@@ -6,9 +6,10 @@ import { useCallback, useState } from 'react';
 
 function CheckboxButton({ children, value, ...checkboxProps }) {
   const [checked, setChecked] = useState(false)
-  const onClick = useCallback(() => {
-    setChecked(!checked)
-  }, [setChecked, checked])
+  const onClick = useCallback(function (event) {
+    event.preventDefault()
+    setChecked((value) => !value)
+  }, [])
   return (
     <Button
       colorScheme={checked ? 'blue' : 'whiteAlpha'}
