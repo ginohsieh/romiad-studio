@@ -22,8 +22,8 @@ function CheckboxButton({ children, value, ...checkboxProps }) {
 
 export default function CheckboxField({
   label,
-  checkboxList=[],
-  forceRequiredMsg=true,
+  checkboxList = [],
+  forceRequiredMsg = true,
   name,
 } = {}) {
 
@@ -39,20 +39,13 @@ export default function CheckboxField({
   }
   return (
     <FormControl>
-      <FormLabel>
-        {label}
-      </FormLabel>
+      <FormLabel>{label}</FormLabel>
       <Stack {...checkboxStackProps}>
         {
-          checkboxList.map(({value, label, ...restProps}) => (
+          checkboxList.map(({ value, label, ...restProps }) => (
             <CheckboxButton key={value} name={name} value={value} checkboxProps={restProps}>{label}</CheckboxButton>
           ))
         }
-        <Checkbox
-          bottom={-5}
-          opacity={0}
-          required={forceRequiredMsg}
-        />
       </Stack>
     </FormControl>
   )
